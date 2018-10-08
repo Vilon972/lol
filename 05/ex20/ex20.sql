@@ -1,0 +1,1 @@
+SELECT films.id_genre, genre.name AS 'name_genre', films.id_distrib, distrib.name AS 'name_distrib', titre AS 'title_film' FROM films INNER JOIN distrib ON films.id_distrib = distrib.id_distrib INNER JOIN genre ON films.id_genre = genre.id_genre WHERE films.id_genre BETWEEN 4 AND 8;

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Calc</title>
+  </head>
+  <body>
+      <input id="gauche" action="Calculate()" type=text name="gauche"></input>
+      <select id="select">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+      </select>
+      <input id="droite" type=text name="droite"></input>
+      <input type="button" name="Try me!" value="Try me!" onclick="Calculate(this.form);">
+
+    <script>
+      function Calculate(calcul) {
+        var nbg = parseInt(document.getElementById("gauche").value);
+        var nbd = parseInt(document.getElementById("droite").value);
+        if (nbg < 0 || nbd < 0 || !Number.isInteger(nbg) || !Number.isInteger(nbd))
+        {
+          alert("Error :(");
+          return;
+        }
+        if (document.getElementById("select").value == "+")
+        {
+          result = nbg+ nbd;
+          console.log(result);
+          alert(result);
+        }
+        else if (document.getElementById("select").value == "-")
+        {
+          result = nbg - nbd;
+          console.log(result);
+          alert(result);
+        }
+        else if (document.getElementById("select").value == "*")
+        {
+          result = nbg * nbd;
+          console.log(result);
+          alert(result);
+        }
+        else if (document.getElementById("select").value == "/")
+        {
+          if (nbd == 0)
+            result = "It's over 9000!";
+          else
+            result = nbg / nbd;
+          console.log(result);
+          alert(result);}
+          else if (sdocument.getElementById("select").value == "%")
+          {
+            if (nbg == 0)
+              result = "It's over 9000!";
+              else
+              result = nbg % nbd;
+              console.log(result);
+              alert(result);
+          }
+        }
+        window.setInterval(function(){
+          alert("Please, use me...");
+      }, 30000);
+    </script>
+  </body>
+</html>

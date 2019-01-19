@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>balloon</title>
+</head>
+<body>
+
+	<div id="baloon" onmouseout="minSize(this)" onclick="changeSize(this)" style="height: 200px;width: 200px;border-radius: 50%;background-color: red;"></div>
+
+</body>
+
+<script type="text/javascript">
+	function changeSize(elem)
+	{
+		if (elem.style.backgroundColor == "red")
+		{
+			elem.style.backgroundColor = "green";
+		}
+		else if (elem.style.backgroundColor == "green")
+		{
+			elem.style.backgroundColor = "blue";
+		}
+		else if (elem.style.backgroundColor == "blue")
+		{
+			elem.style.backgroundColor = "red";
+		}
+		console.log(elem.style.width);
+		if (elem.style.width < parseInt(420) + 'px'){
+			elem.style.width = parseInt(elem.style.width) + 10 + 'px';
+			elem.style.height = parseInt(elem.style.height) + 10 + 'px';
+		}
+		else {
+			elem.style.width = parseInt(200) + 'px';
+			elem.style.height = parseInt(200) + 'px';
+		}
+
+	}
+	function minSize(elem)
+	{
+		if (elem.style.width > parseInt(200) + 'px'){
+			elem.style.width = parseInt(elem.style.width) - 5 + 'px';
+			elem.style.height = parseInt(elem.style.height) - 5 + 'px';
+		}
+		if (elem.style.backgroundColor == "red")
+		{
+			elem.style.backgroundColor = "blue";
+		}
+		else if (elem.style.backgroundColor == "blue")
+		{
+			elem.style.backgroundColor = "green";
+		}
+		else if (elem.style.backgroundColor == "green")
+		{
+			elem.style.backgroundColor = "red";
+		}
+	}
+
+
+</script>
+</html>

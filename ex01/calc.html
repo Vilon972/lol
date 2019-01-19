@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calc</title>
+</head>
+<body>
+
+	<input type="text" value="" id="inpF">
+
+	<select id="slct">
+		<option value="+">+</option> 
+ 		<option value="-" selected>-</option>
+  		<option value="*">*</option>
+  		<option value="/">/</option>
+  		<option value="%">%</option>
+	</select>
+
+	<input type="text" value="" id="inpS">
+
+	<input onclick="calc()" type="submit" value="Try me !" id="SubBtn">
+
+<script type="text/javascript">
+	function calc(){
+		var inputF = document.getElementById("inpF").value;
+		var slct = document.getElementById("slct").value;
+		var inputS = document.getElementById("inpS").value;
+		
+		if ((parseInt(inputF) >= 0 && parseInt(inputS) >= 0 && inputF) && (slct == "/" || slct == "%") && parseInt(inputS) != 0) {
+			alert("Resultat" + " : " + eval(inputF + slct + inputS))
+			;
+			console.log(eval(inputF + slct + inputS));
+		}
+		else if (parseInt(inputF) < 0 || parseInt(inputS) < 0 || !inputF || !inputS)
+		{
+			alert("Error :(");
+			console.log("Error :(");
+		}
+		else if ((slct == "/" || slct == "%") && parseInt(inputS) == 0)
+		{
+			alert("It's over 9000!");
+			console.log("It's over 9000!");
+		}
+		else {
+			alert("Resultat" + " : " + eval(inputF + slct + inputS));
+			console.log(eval(inputF + slct + inputS));
+		}
+		
+
+
+	}
+
+
+</script>
+</body>
+</html>
